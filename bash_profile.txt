@@ -1,0 +1,23 @@
+  #.bash_profile
+  2 #Get the aliases and functions
+  3 if [ -f ~/.bashrc ]; then
+  4        . ~/.bashrc
+  5 fi
+  6 PATH=.:$HOME/bin:$PATH
+  7 export PATH
+  8 LOGNAME=$(logname)
+  9 export HOST
+ 10 umask 022
+ 11 set -o ignoreeof
+ 12 EDITOR=/usr/bin/vi
+ 13 MAIL=/usr/spool/mail/$LOGNAME
+ 14 export MAIL
+ 15 case $LOGNAME in
+ 16      root) PS1="$HOST #";;
+ 17      *)    PS1="$HOST $";;
+ 18 esac
+ 19 PS2='you need to finish inputting...'
+ 20 alias cls='clear'
+ 21 alias dir='ls'
+ 22 alias copy='cp'
+ 23 alias rename='mv'
